@@ -4,11 +4,13 @@ import HowItWorks from "./components/HowItWorks";
 import FAQ from "./components/FAQ";
 import Testimonials from "./components/Testimonials";
 import Map from "./components/Map";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
+      <ToastContainer />
       <main>
         <Hero />
         <HowItWorks />

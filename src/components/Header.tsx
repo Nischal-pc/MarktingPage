@@ -3,11 +3,6 @@ const Header = () => {
     <header className="bg-white py-4 shadow-sm">
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center">
-          {/* <Home className="w-8 h-8 text-[#42A5F5]" />
-          <span className="ml-2 text-2xl font-semibold">
-            <span className="text-gray-800">Weavers</span>
-            <span className="text-[#42A5F5]"> Eco Home</span>
-          </span> */}
           <img src="/assets/logo.png" />
         </div>
         <nav>

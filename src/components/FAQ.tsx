@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 const FAQ = () => {
@@ -56,6 +56,12 @@ const FAQ = () => {
         "Enbridge suggests checking out the Canada Greener Homes Loan before installing any upgrades, though this is a separate application from the Home Efficiency Rebate program.",
     },
   ];
+  const ScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   return (
     <section id="faq" className="py-20 bg-white">
@@ -93,6 +99,14 @@ const FAQ = () => {
               </div>
             </div>
           ))}
+        </div>
+        <div className="text-center mt-12">
+          <button
+            onClick={ScrollToTop}
+            className="bg-[#ef4444] text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-red-600 transition-colors"
+          >
+            Claim Your Rebate Now!
+          </button>
         </div>
       </div>
     </section>

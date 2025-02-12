@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 const Testimonials = () => {
   const testimonials = [
     {
@@ -19,6 +20,12 @@ const Testimonials = () => {
       text: "Just received my $7100 rebate for my brand new Heat Pump install and already see a difference in my bills as well!",
     },
   ];
+  const ScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   return (
     <section id="testimonials" className="py-20 bg-gray-50">
@@ -51,7 +58,10 @@ const Testimonials = () => {
           ))}
         </div>
         <div className="text-center mt-12">
-          <button className="bg-[#ef4444] text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-red-600 transition-colors">
+          <button
+            onClick={ScrollToTop}
+            className="bg-[#ef4444] text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-red-600 transition-colors"
+          >
             Claim Your Rebate Now!
           </button>
         </div>
