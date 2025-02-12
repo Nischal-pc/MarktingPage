@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { AlertCircle, Home, Zap, Phone, ArrowRight } from "lucide-react";
+import { AlertCircle, Phone, ArrowRight } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { formSchema, type FormData } from "../lib/schema";
 import { submitForm } from "../lib/api";
 import { toast } from "react-toastify";
+import { faHouse, faBolt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Hero = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -141,12 +143,6 @@ const Hero = () => {
     }
   };
 
-  // const handleBack = () => {
-  //   if (currentStep > 1) {
-  //     setCurrentStep((prev) => prev - 1);
-  //   }
-  // };
-
   return (
     <div className="relative min-h-[20vh] bg-gray-950">
       <div
@@ -181,7 +177,10 @@ const Hero = () => {
                 </h2>
 
                 <div className="flex items-center gap-3 mb-8 bg-blue-50 p-4 rounded-xl">
-                  <Home className="w-8 h-8 text-[#3498db]" />
+                  <FontAwesomeIcon
+                    icon={faHouse}
+                    className="w-6 h-6 text-[#3498db]"
+                  />
                   <span className="text-lg text-gray-700 font-medium">
                     Square Footage: {formData.squareFootage}
                   </span>
@@ -197,7 +196,10 @@ const Hero = () => {
                       <div className="flex justify-between items-center p-4 bg-white rounded-xl">
                         <div className="flex items-center gap-3">
                           <div className="p-2  rounded-lg">
-                            <Zap className="w-6 h-6 text-[#3498db]" />
+                            <FontAwesomeIcon
+                              icon={faBolt}
+                              className="w-6 h-6 text-[#3498db]"
+                            />
                           </div>
                           <span className="font-medium">Electricity</span>
                         </div>
@@ -209,7 +211,11 @@ const Hero = () => {
                       <div className="flex justify-between items-center p-4 bg-white rounded-xl">
                         <div className="flex items-center gap-3">
                           <div className="p-2 rounded-lg">
-                            <Home className="w-6 h-6 text-[#3498db]" />
+                            {/* <Home className="w-6 h-6 text-[#3498db]" /> */}
+                            <FontAwesomeIcon
+                              icon={faHouse}
+                              className="w-6 h-6 text-[#3498db]"
+                            />
                           </div>
                           <span className="font-medium">Heating</span>
                         </div>
@@ -382,15 +388,6 @@ const Hero = () => {
                 </div>
 
                 <div className="flex gap-4">
-                  {/* {currentStep > 1 && (
-                    <button
-                      type="button"
-                      onClick={handleBack}
-                      className="px-6 py-4 bg-gray-100 text-gray-700 rounded-xl font-semibold hover:bg-gray-200 transition-all duration-300"
-                    >
-                      Back
-                    </button>
-                  )} */}
                   {currentQuestion.type !== "select" && (
                     <button
                       type="submit"
