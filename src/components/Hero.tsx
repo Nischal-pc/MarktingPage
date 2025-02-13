@@ -83,7 +83,7 @@ const Hero = () => {
       question: "What is the best phone number to reach you at?",
       field: "phone",
       type: "tel",
-      placeholder: "(123) 456-7890",
+      placeholder: "123-456-7896",
     },
   ];
 
