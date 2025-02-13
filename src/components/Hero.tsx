@@ -300,26 +300,6 @@ const Hero = () => {
         <div className="relative z-10 container mx-auto px-4 py-20">
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-3xl p-8">
-              <div className="mb-8">
-                <div className="flex justify-between mb-4">
-                  {questions.map((q, index) => (
-                    <div
-                      key={index}
-                      className={`w-1/6 h-3 rounded-full mx-1 transition-all duration-500 ${
-                        index + 1 === currentStep
-                          ? "bg-[#3498db] scale-110"
-                          : index + 1 < currentStep
-                          ? "bg-[#3498db]"
-                          : "bg-gray-200"
-                      }`}
-                    />
-                  ))}
-                </div>
-                <p className="text-sm font-medium text-gray-500 text-center">
-                  Step {currentStep} of {questions.length}
-                </p>
-              </div>
-
               <h1 className="text-3xl font-bold text-gray-800 mb-4">
                 See how much upgrading to an energy efficient heat pump could
                 save you
@@ -410,6 +390,25 @@ const Hero = () => {
                   )}
                 </div>
               </form>
+              <div>
+                <div className="flex justify-between mb-4">
+                  {questions.map((q, index) => (
+                    <div
+                      key={index}
+                      className={`w-1/6 h-3 rounded-full mx-1 transition-all duration-500 ${
+                        index + 1 === currentStep
+                          ? "bg-[#3498db] scale-110"
+                          : index + 1 < currentStep
+                          ? "bg-[#3498db]"
+                          : "bg-gray-200"
+                      }`}
+                    />
+                  ))}
+                </div>
+                {/* <p className="text-sm font-medium text-gray-500 text-center">
+                  Step {currentStep} of {questions.length}
+                </p> */}
+              </div>
             </div>
           </div>
         </div>
