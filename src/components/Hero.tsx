@@ -29,7 +29,8 @@ const Hero = () => {
   const questions = [
     {
       step: 1,
-      question: "What is the approximate square footage of your home?",
+      question:
+        "What is the approximate square footage of your home (Just a guess is fine)?",
       subtext: "Just a guess is fine",
       field: "squareFootage",
       type: "select",
@@ -44,7 +45,8 @@ const Hero = () => {
     },
     {
       step: 2,
-      question: "What's your average monthly electricity bill?",
+      question:
+        "What's your average monthly electricity bill (Just a guess is fine)?",
       subtext: "Just a guess is fine",
       field: "electricityBill",
       type: "number",
@@ -53,7 +55,8 @@ const Hero = () => {
     },
     {
       step: 3,
-      question: "What's your average monthly heating bill?",
+      question:
+        "What's your average monthly heating bill (Just a guess is fine)?",
       subtext: "Just a guess is fine",
       field: "heatingBill",
       type: "number",
@@ -300,11 +303,11 @@ const Hero = () => {
         <div className="relative z-10 container mx-auto px-4 py-20">
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-3xl p-8">
-              <h1 className="text-3xl font-bold text-gray-800 mb-4">
+              <h1 className="text-4xl font-bold text-gray-800 mb-4">
                 See how much upgrading to an energy efficient heat pump could
                 save you
               </h1>
-              <p className="text-lg text-gray-600 mb-6">
+              <p className="text-xl text-gray-600 mb-6">
                 Take this quick{" "}
                 <span className="text-red-500 font-semibold">30 second</span>{" "}
                 survey to see how much you can{" "}
@@ -316,11 +319,11 @@ const Hero = () => {
                   <h2 className="text-2xl font-bold text-gray-800 mb-3">
                     {currentQuestion.question}
                   </h2>
-                  {currentQuestion.subtext && (
+                  {/* {currentQuestion.subtext && (
                     <p className="text-gray-600 mb-6">
                       {currentQuestion.subtext}
                     </p>
-                  )}
+                  )} */}
 
                   {currentQuestion.type === "select" ? (
                     <div className="space-y-3">
@@ -390,7 +393,7 @@ const Hero = () => {
                   )}
                 </div>
               </form>
-              <div>
+              <div className="mb-8 mt-8">
                 <div className="flex justify-between mb-4">
                   {questions.map((q, index) => (
                     <div
